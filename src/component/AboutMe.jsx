@@ -2,8 +2,17 @@ import React from 'react'
 import {FaCloudDownloadAlt ,FaBriefcase } from "react-icons/fa";
 import Stack from '@mui/material/Stack';
 import CircularProgress from '@mui/material/CircularProgress';
-
+import resumeImage from './images/pravinresume.png';
 const AboutMe = () => {
+
+    const handleDownloadCV = () => {
+        const link = document.createElement('a');
+        link.href = resumeImage;
+        link.download = 'resume.png';
+        link.target = '_blank';
+        link.click();
+      };
+
     return(
         <>
          <div className="aboutmemain">
@@ -57,7 +66,7 @@ const AboutMe = () => {
                         </div>
                       
                         <div className='btndiv'>
-            <button className="moreaboutmebtn">DOWNLOAD CV</button>
+            <button className="moreaboutmebtn" onClick={handleDownloadCV}>DOWNLOAD CV</button>
             <div className='btnicon'><FaCloudDownloadAlt style={{color:'white',backgroundColor:'rgb(255,180,0)', marginTop:'5px'}}/></div>
             </div>
                     </div>
